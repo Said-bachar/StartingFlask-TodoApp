@@ -15,6 +15,17 @@
               <br>
               <button type="submit">Add todo</button>
           </div>
-     </form>  
+     </form>
+     {% for todo in todo_list %}  
+       <p>{{ todo.id }} | {{ todo.title }}</p>
+        
+        {% if todo.complete == False %}
+          <span>Not complete</span>
+        {% else %}
+          <span>Completed</span>
+        {% endif %}
+        <a href="/">Update</a>
+        <a href="/">Delete</a>
+     {% endfor %}
 </body>
 </html>
